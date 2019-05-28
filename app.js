@@ -15,12 +15,12 @@ fs.writeFileSync('challenge2/info.txt', groupName)
 
 // ## Challenge 3:
 // The file was incorrectly named binfo.txt ...Rename it to info.txt(only using js!)
-// fs.renameSync("./challenge3/binfo.txt", "./challenge3/info.txt")
+fs.renameSync("./challenge3/binfo.txt", "./challenge3/info.txt")
 
 // ## Challenge 4:
 // Create a new folder within the challenge4 folder called "copyfolder".Then copy info.txt into that folder.
-// fs.mkdirSync('./challenge4/copyfolder');
-// fs.copyFileSync('./challenge4/info.txt', './challenge4/copyfolder/info.txt');
+fs.mkdirSync('./challenge4/copyfolder');
+fs.copyFileSync('./challenge4/info.txt', './challenge4/copyfolder/info.txt');
 
 
 // ## Challenge 5:
@@ -30,3 +30,14 @@ str = str.replace(/-/g, ' ');
 
 fs.writeFileSync('./challenge5/info.txt', str);
 
+
+// ## Challenge 6:
+// Display all files that end with ".txt".Don't hard code the file names!
+fs.readdir('./challenge6', (err, files) => {
+    if (err) {
+        console.error(err)
+    } else {
+        let txtFiles = files.filter(item => "txt" === item.slice(item.length - 3));
+        console.log(txtFiles);
+    }
+})
