@@ -29,3 +29,7 @@ fs.writeFileSync('challenge2/info.txt', groupName)
 // The file was incorrectly named binfo.txt ...Rename it to info.txt(only using js!)
 fs.renameSync("./challenge3/binfo.txt", "./challenge3/info.txt")
 
+// ## Challenge 4:
+// Create a new folder within the challenge4 folder called "copyfolder".Then copy info.txt into that folder.
+fs.mkdirSync('./challenge4/copyfolder');
+fs.copyFileSync('./challenge4/info.txt', './challenge4/copyfolder/info.txt');
